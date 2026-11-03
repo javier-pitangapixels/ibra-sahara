@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { MapPin, Phone, ExternalLink, MessageCircle } from 'lucide-react';
+import { MapPin, Phone, MessageCircle } from 'lucide-react';
 import { Language } from '@/data/packages';
 import { Dictionary } from '@/lib/dictionaries';
 import { buildWhatsAppUrl } from '@/lib/whatsapp';
@@ -56,8 +56,8 @@ export function Footer({ lang, dict }: FooterProps) {
                 </a>
               </li>
               <li>
-                <a href="#tiktok" className="hover:text-[#C85A32] transition-colors">
-                  {dict.nav.tiktok}
+                <a href="#reviews" className="hover:text-[#C85A32] transition-colors">
+                  {dict.nav.reviews}
                 </a>
               </li>
               <li>
@@ -68,10 +68,10 @@ export function Footer({ lang, dict }: FooterProps) {
             </ul>
           </div>
 
-          {/* Contact & OTA Listings */}
+          {/* Contact & Direct WhatsApp */}
           <div className="md:col-span-4 space-y-4">
             <h3 className="text-xs font-bold uppercase tracking-widest text-[#C85A32]">
-              {dict.footer.otaBookings}
+              {dict.footer.contactHeading}
             </h3>
 
             <div className="space-y-2.5 text-sm text-[#9BA3AE]">
@@ -93,42 +93,15 @@ export function Footer({ lang, dict }: FooterProps) {
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-2 pt-2">
+            <div className="pt-2">
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full bg-[#1E7E48] hover:bg-[#156236] text-white text-xs font-semibold px-3.5 py-2 transition-colors"
+                className="inline-flex items-center gap-2 rounded-full bg-[#1E7E48] hover:bg-[#156236] text-white text-xs sm:text-sm font-semibold px-5 py-2.5 shadow-sm transition-colors"
               >
-                <MessageCircle className="w-3.5 h-3.5" />
-                <span>WhatsApp</span>
-              </a>
-              <a
-                href="https://www.tiktok.com/@IbraSahara"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full bg-[#F4EFE6]/10 hover:bg-[#F4EFE6]/20 text-[#F4EFE6] text-xs font-semibold px-3.5 py-2 transition-colors"
-              >
-                <span>TikTok @IbraSahara</span>
-                <ExternalLink className="w-3 h-3" />
-              </a>
-              <a
-                href="https://www.getyourguide.com/douz-l148204/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full bg-[#F4EFE6]/10 hover:bg-[#F4EFE6]/20 text-[#F4EFE6] text-xs font-semibold px-3.5 py-2 transition-colors"
-              >
-                <span>GetYourGuide</span>
-                <ExternalLink className="w-3 h-3" />
-              </a>
-              <a
-                href="https://www.tripadvisor.com/Attractions-g477973-Activities-Douz_Kebili_Governorate.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full bg-[#F4EFE6]/10 hover:bg-[#F4EFE6]/20 text-[#F4EFE6] text-xs font-semibold px-3.5 py-2 transition-colors"
-              >
-                <span>TripAdvisor</span>
-                <ExternalLink className="w-3 h-3" />
+                <MessageCircle className="w-4 h-4" />
+                <span>{dict.nav.whatsappCta}</span>
               </a>
             </div>
           </div>

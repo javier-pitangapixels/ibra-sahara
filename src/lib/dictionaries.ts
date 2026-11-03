@@ -10,7 +10,7 @@ export interface Dictionary {
     packages: string;
     curator: string;
     customTrip: string;
-    tiktok: string;
+    reviews: string;
     faq: string;
     whatsappCta: string;
     currencyLabel: string;
@@ -22,7 +22,7 @@ export interface Dictionary {
     subheadline: string;
     exploreCta: string;
     whatsappCta: string;
-    trustLabel: string;
+    trustBadges: string[];
     verifiedGuide: string;
     customOrSignature: string;
   };
@@ -31,11 +31,8 @@ export interface Dictionary {
     title: string;
     subtitle: string;
     quote: string;
-    comparisonTitle: string;
-    agencyTitle: string;
-    agencyPoints: string[];
-    ibraTitle: string;
-    ibraPoints: string[];
+    highlightsTitle: string;
+    highlightsPoints: string[];
     pillars: {
       icon: 'camel' | 'quad' | 'tent-luxury' | 'languages';
       title: string;
@@ -53,9 +50,6 @@ export interface Dictionary {
     itineraryToggleClose: string;
     includedTitle: string;
     bookWhatsappCta: string;
-    otaGuaranteeLabel: string;
-    bookGyg: string;
-    bookTripAdvisor: string;
   };
   customBuilder: {
     eyebrow: string;
@@ -79,20 +73,10 @@ export interface Dictionary {
     sendWhatsappCta: string;
     responseGuarantee: string;
   };
-  tiktokSection: {
+  reviewsSection: {
     eyebrow: string;
     title: string;
     subtitle: string;
-    followCta: string;
-    reels: {
-      id: string;
-      title: string;
-      caption: string;
-      views: string;
-      tag: string;
-      image: string;
-    }[];
-    reviewsTitle: string;
     reviews: {
       name: string;
       country: string;
@@ -117,7 +101,7 @@ export interface Dictionary {
     locationValue: string;
     phoneLabel: string;
     quickLinks: string;
-    otaBookings: string;
+    contactHeading: string;
     rights: string;
   };
   mobileBar: {
@@ -137,9 +121,9 @@ export const DICTIONARIES: Record<Language, Dictionary> = {
     },
     nav: {
       packages: 'Signature Tours',
-      curator: 'Why Ibra',
+      curator: 'Meet Ibra',
       customTrip: 'Custom Trip Builder',
-      tiktok: 'Desert Life',
+      reviews: 'Guest Reviews',
       faq: 'FAQ',
       whatsappCta: 'WhatsApp Ibra',
       currencyLabel: 'Currency',
@@ -149,45 +133,43 @@ export const DICTIONARIES: Record<Language, Dictionary> = {
       pill: '📍 Douz, Tunisia • Guides in 🇬🇧 English, 🇫🇷 Français, 🇹🇳 العربية',
       h1: 'Experience the Real Sahara with Ibra—Your Local Douz Guide.',
       subheadline:
-        'Skip rigid tour buses. Choose one of our proven desert routes or craft a 100% private camel, quad, or 4x4 expedition tailored to your pace and camp style.',
+        'Discover the Grand Erg Oriental at your own pace. Choose one of our signature desert routes or craft a 100% private camel, quad, or 4x4 expedition tailored to your group.',
       exploreCta: 'Explore Packages ↓',
       whatsappCta: 'Chat on WhatsApp',
-      trustLabel: 'Verified Local Guide & Direct Booking Partner',
+      trustBadges: [
+        '5.0 ★ Rated by International Travelers',
+        '100% Private & Customizable Routes',
+        'Free Hotel Pickup in Douz',
+      ],
       verifiedGuide: 'Born & Raised in Douz',
       customOrSignature: 'Private & Flexible Departures',
     },
     curator: {
-      eyebrow: 'The Independent Curator Advantage',
-      title: 'Zero Conflict of Interest. 100% Tailored to Your Desert Dream.',
+      eyebrow: 'Your Personal Guide in Douz',
+      title: 'Every Sahara Journey Crafted Around You.',
       subtitle:
-        'Because Ibra does not own a single fixed fleet or one rigid camp, he is never forced to push you into a one-size-fits-all tour. Instead, he acts as your personal Saharan fixer—hand-selecting the healthiest camels, best-maintained quads & 4x4s, and the exact camp tier you want.',
+        'Born and raised at the edge of the dunes in Douz, Ibra plans every expedition around how you want to experience the desert—hand-selecting gentle dromedaries, modern quads, reliable 4x4s, and the camp atmosphere that fits your style, from an authentic Bedouin bivouac under the stars to a private luxury desert suite.',
       quote:
         '“In the Sahara, hospitality is sacred. Tell me how you dream of seeing the dunes—wild campfire under the stars or a private luxury tent—and I will arrange every detail personally.” — Ibra',
-      comparisonTitle: 'Mass Tour Agencies vs. Direct with Ibra',
-      agencyTitle: 'Rigid Tour Agencies',
-      agencyPoints: [
-        'Locked into a single crowded camp owned by the agency',
-        'Fixed departure schedules & rushed photo stops',
-        'Hidden middleman markups of 30–50%',
-      ],
-      ibraTitle: 'Independent Curator (Ibra Sahara)',
-      ibraPoints: [
-        'Hand-picked camels, newest quads & trusted 4x4 desert drivers',
-        'Choose between authentic nomadic bivouac or luxury en-suite glamping',
-        'Direct local rates in EUR, USD, or TND with instant WhatsApp coordination',
+      highlightsTitle: 'What to Expect When Traveling with Ibra',
+      highlightsPoints: [
+        'Hand-picked camels, modern automatic quads & experienced 4x4 desert drivers',
+        'Your choice of traditional nomadic bivouac or luxury en-suite desert camp',
+        'Personal trip planning and fast coordination directly on WhatsApp',
+        'Authentic campfire cooking including freshly baked Mella sand bread',
       ],
       pillars: [
         {
           icon: 'camel',
-          title: 'Ethical, Healthy Dromedaries',
+          title: 'Ethical, Gentle Dromedaries',
           description:
-            'Sourced from trusted local Bedouin families in Douz—calm, well-cared-for camels matched to each rider.',
+            'Partnered with trusted local Bedouin families in Douz—calm, well-cared-for camels matched to each rider.',
         },
         {
           icon: 'quad',
-          title: 'Top-Spec Quads & 4x4s',
+          title: 'Well-Maintained Quads & 4x4s',
           description:
-            'Inspected before every departure so your dune crossing is smooth, powerful, and uncompromised on safety.',
+            'Inspected before every departure so your dune crossing is smooth, powerful, and safe.',
         },
         {
           icon: 'tent-luxury',
@@ -205,19 +187,16 @@ export const DICTIONARIES: Record<Language, Dictionary> = {
     },
     packagesSection: {
       eyebrow: 'Signature Desert Routes',
-      title: 'Proven Sahara Expeditions—Transparent Local Pricing',
+      title: 'Signature Sahara Expeditions from Douz',
       subtitle:
-        'Select your preferred camp tier or ride duration below. Switch currencies at the top bar to view instant rates in EUR, USD, or TND.',
+        'Select your preferred camp style or ride duration below. You can switch currencies in the top menu to view rates in EUR, USD, or TND.',
       selectTierLabel: 'Choose Your Tier / Option:',
       startingFrom: 'Starting from',
       perPerson: '/ person',
       itineraryToggleOpen: 'View Day-by-Day Schedule & Inclusions',
       itineraryToggleClose: 'Hide Schedule Details',
       includedTitle: 'What’s Included:',
-      bookWhatsappCta: 'Book Direct via WhatsApp',
-      otaGuaranteeLabel: 'Prefer online card checkout with OTA buyer protection?',
-      bookGyg: 'Book on GetYourGuide',
-      bookTripAdvisor: 'View on TripAdvisor',
+      bookWhatsappCta: 'Book via WhatsApp',
     },
     customBuilder: {
       eyebrow: '100% Custom Expedition Configurator',
@@ -282,47 +261,11 @@ export const DICTIONARIES: Record<Language, Dictionary> = {
       sendWhatsappCta: 'Send Custom Request to Ibra on WhatsApp →',
       responseGuarantee: 'Direct reply from Ibra—usually within 15–30 minutes when not in deep dunes.',
     },
-    tiktokSection: {
-      eyebrow: 'Real Moments from the Grand Erg Oriental',
-      title: 'Follow Daily Desert Life on TikTok (@IbraSahara)',
+    reviewsSection: {
+      eyebrow: 'Traveler Stories',
+      title: 'What Guests Say About Exploring with Ibra',
       subtitle:
-        'No stock studio filters—watch how we bake Mella flatbread beneath glowing sand embers, lead camel caravans at golden hour, and sing around the campfire.',
-      followCta: 'Watch Daily Desert Life on TikTok (@IbraSahara) ↗',
-      reels: [
-        {
-          id: 'reel-1',
-          title: 'Baking Mella Sand Bread Under Hot Embers',
-          caption: 'Our signature desert ritual every night at camp 🔥🫓 #Douz #Sahara #Tunisia',
-          views: '48.2K',
-          tag: 'Campfire Cuisine',
-          image: '/images/ibra-guide-leading-camels.jpg',
-        },
-        {
-          id: 'reel-2',
-          title: 'Golden Hour Caravan Into the Deep Erg',
-          caption: 'Leaving 3 hours before sunset when the dunes turn pure gold 🐪✨',
-          views: '92.5K',
-          tag: 'Camel Trek',
-          image: '/images/ibra-caravan-dunes.jpg',
-        },
-        {
-          id: 'reel-3',
-          title: 'Sunset Quad Ridge Run in Douz',
-          caption: 'Untouched wind-rippled dunes as far as the eye can see 🏜️🏁',
-          views: '64.1K',
-          tag: 'Quad Session',
-          image: '/images/quad-dunes-session.jpg',
-        },
-        {
-          id: 'reel-4',
-          title: 'Ksar Ghilane Thermal Spring & Oasis Palms',
-          caption: 'After crossing the dunes by 4x4, a warm natural spring awaits 🌴🚙',
-          views: '53.8K',
-          tag: 'Oasis 4x4',
-          image: '/images/ksar-ghilane-oasis.jpg',
-        },
-      ],
-      reviewsTitle: 'What Travelers Say About Exploring with Ibra',
+        'Real experiences from travelers who explored the dunes of Douz and Ksar Ghilane with Ibra.',
       reviews: [
         {
           name: 'Claire & Matthieu L.',
@@ -338,7 +281,7 @@ export const DICTIONARIES: Record<Language, Dictionary> = {
           flag: '🇩🇪',
           date: 'November',
           tourType: 'Custom Combo: Sunset Camel + Morning Quad',
-          text: 'We wanted both camels and quads without booking two separate big tours. Ibra arranged quads to meet us in the morning after our bivouac night. Seamless WhatsApp communication and fair local price.',
+          text: 'We wanted both camels and quads without booking two separate big tours. Ibra arranged quads to meet us in the morning after our bivouac night. Seamless WhatsApp communication from start to finish.',
         },
         {
           name: 'Sarah & James K.',
@@ -367,9 +310,9 @@ export const DICTIONARIES: Record<Language, Dictionary> = {
             'The Traditional Bivouac offers an authentic nomadic experience with heavy wool Bedouin tents, mattresses on desert carpets, a central campfire, and shared bathroom facilities. The Upgraded Comfort and Luxury Glamping tiers provide a private high-walled tent with a raised bed frame, hotel-grade bedding, and your own private en-suite bathroom and shower.',
         },
         {
-          question: 'What payment methods and currencies do you accept?',
+          question: 'How does booking and payment work?',
           answer:
-            'When booking directly via WhatsApp, you pay in cash upon arrival in Douz in Tunisian Dinars (TND), Euros (EUR), or US Dollars (USD)—no upfront wire transfer hurdles. If you prefer to pay online by credit card with platform buyer protection, you can use our GetYourGuide or TripAdvisor links.',
+            'Simply message Ibra on WhatsApp to confirm your dates and itinerary. You can pay in cash upon arrival in Douz in Tunisian Dinars (TND), Euros (EUR), or US Dollars (USD).',
         },
         {
           question: 'Do I need previous experience to drive a desert quad bike?',
@@ -385,17 +328,17 @@ export const DICTIONARIES: Record<Language, Dictionary> = {
     },
     footer: {
       description:
-        'Independent local Sahara guide in Douz, Tunisia. Private camel treks, quad bike sessions, and custom 4x4 expeditions across the Grand Erg Oriental.',
+        'Local Sahara guide in Douz, Tunisia. Private camel treks, quad bike sessions, and custom 4x4 expeditions across the Grand Erg Oriental.',
       locationLabel: 'Base Camp',
       locationValue: 'Douz, Kebili Governorate, Tunisia (Gateway to the Sahara)',
-      phoneLabel: 'Direct WhatsApp & Phone',
+      phoneLabel: 'WhatsApp & Phone',
       quickLinks: 'Explore',
-      otaBookings: 'Verified Listings & Social',
+      contactHeading: 'Contact & Direct Booking',
       rights: 'All rights reserved. Crafted in Douz, Tunisia.',
     },
     mobileBar: {
-      assurance: 'Direct Local Guide Rates',
-      subAssurance: 'Instant reply in EN • FR • AR',
+      assurance: 'Chat Directly with Ibra',
+      subAssurance: 'Fast reply in EN • FR • AR',
       cta: 'WhatsApp Ibra',
     },
   },
@@ -408,9 +351,9 @@ export const DICTIONARIES: Record<Language, Dictionary> = {
     },
     nav: {
       packages: 'Nos Formules',
-      curator: 'L’Avantage Ibra',
+      curator: 'Votre Guide',
       customTrip: 'Circuit sur Mesure',
-      tiktok: 'Vie au Désert',
+      reviews: 'Avis Voyageurs',
       faq: 'FAQ',
       whatsappCta: 'WhatsApp Ibra',
       currencyLabel: 'Devise',
@@ -420,32 +363,30 @@ export const DICTIONARIES: Record<Language, Dictionary> = {
       pill: '📍 Douz, Tunisie • Guide en 🇬🇧 English, 🇫🇷 Français, 🇹🇳 العربية',
       h1: 'Vivez le Vrai Sahara avec Ibra—Votre Guide Local à Douz.',
       subheadline:
-        'Oubliez les bus touristiques rigides. Choisissez l’un de nos circuits signatures ou créez une expédition 100 % sur mesure en dromadaire, quad ou 4x4 adaptée à votre rythme.',
+        'Découvrez le Grand Erg Oriental à votre rythme. Choisissez l’un de nos circuits signatures ou créez une expédition 100 % privée en dromadaire, quad ou 4x4.',
       exploreCta: 'Découvrir les Formules ↓',
       whatsappCta: 'Discuter sur WhatsApp',
-      trustLabel: 'Guide Local Vérifié & Réservation Directe',
+      trustBadges: [
+        'Noté 5.0 ★ par les Voyageurs',
+        'Circuits 100 % Privés & sur Mesure',
+        'Prise en Charge Gratuite à Douz',
+      ],
       verifiedGuide: 'Enfant du Désert de Douz',
       customOrSignature: 'Départs Privés & Flexibles',
     },
     curator: {
-      eyebrow: 'L’Avantage du Guide Indépendant',
-      title: 'Zéro Conflit d’Intérêts. 100 % Adapté à Vos Envies.',
+      eyebrow: 'Votre Guide Personnel à Douz',
+      title: 'Chaque Expédition Saharienne Façonnée Pour Vous.',
       subtitle:
-        'Parce qu’Ibra n’est pas lié à une flotte unique ni à un seul campement imposé, il sélectionne en toute liberté les meilleurs dromadaires, les quads les mieux entretenus et le style exact de bivouac ou campement de luxe dont vous rêvez.',
+        'Né aux portes des dunes à Douz, Ibra organise chaque sortie selon vos envies : sélection de dromadaires doux et bien soignés, quads récents, 4x4 fiables et choix du campement qui vous correspond — du bivouac nomade autour du feu jusqu’au campement de luxe avec salle de bain privée.',
       quote:
         '« Dans le Sahara, l’hospitalité est sacrée. Dites-moi comment vous rêvez de vivre les dunes — feu de camp nomade sous les étoiles ou tente privée grand confort — et j’organise chaque détail pour vous. » — Ibra',
-      comparisonTitle: 'Agences Classiques vs. En Direct avec Ibra',
-      agencyTitle: 'Agences de Voyages Rigides',
-      agencyPoints: [
-        'Imposent leur propre campement souvent bondé',
-        'Horaires figés et arrêts photos chronométrés en groupe',
-        'Commissions d’intermédiaires de 30 à 50 %',
-      ],
-      ibraTitle: 'Guide Fixeur Indépendant (Ibra Sahara)',
-      ibraPoints: [
-        'Dromadaires choisis avec soin, quads récents et chauffeurs 4x4 experts',
-        'Choix libre entre bivouac nomade authentique ou glamping de luxe',
-        'Tarifs locaux directs en EUR, USD ou TND via WhatsApp',
+      highlightsTitle: 'Ce Qui Rend Votre Expérience Unique',
+      highlightsPoints: [
+        'Dromadaires choisis avec soin, quads automatiques récents et chauffeurs 4x4 expérimentés',
+        'Choix entre bivouac nomade authentique ou campement glamping grand confort',
+        'Organisation directe et personnalisée avec Ibra sur WhatsApp',
+        'Cuisine saharienne au feu de bois avec cuisson du pain de sable Mella',
       ],
       pillars: [
         {
@@ -476,19 +417,16 @@ export const DICTIONARIES: Record<Language, Dictionary> = {
     },
     packagesSection: {
       eyebrow: 'Nos Expéditions Signatures',
-      title: 'Circuits Authentiques au Départ de Douz',
+      title: 'Nos Expéditions Sahariennes au Départ de Douz',
       subtitle:
-        'Sélectionnez votre niveau de confort ou la durée souhaitée. Changez de devise en haut de page pour afficher les prix en EUR, USD ou TND.',
+        'Sélectionnez votre niveau de confort ou la durée souhaitée ci-dessous. Vous pouvez changer de devise dans le menu supérieur (EUR, USD ou TND).',
       selectTierLabel: 'Choisissez Votre Formule :',
       startingFrom: 'À partir de',
       perPerson: '/ pers.',
       itineraryToggleOpen: 'Voir le Programme Détaillé & Inclus',
       itineraryToggleClose: 'Masquer le Programme',
       includedTitle: 'Ce Qui Est Inclus :',
-      bookWhatsappCta: 'Réserver en Direct via WhatsApp',
-      otaGuaranteeLabel: 'Vous préférez payer par carte en ligne via une plateforme ?',
-      bookGyg: 'Réserver sur GetYourGuide',
-      bookTripAdvisor: 'Voir sur TripAdvisor',
+      bookWhatsappCta: 'Réserver via WhatsApp',
     },
     customBuilder: {
       eyebrow: 'Configurateur de Circuit sur Mesure',
@@ -553,47 +491,11 @@ export const DICTIONARIES: Record<Language, Dictionary> = {
       sendWhatsappCta: 'Envoyer ma Demande sur Mesure à Ibra →',
       responseGuarantee: 'Réponse directe d’Ibra — généralement sous 15 à 30 minutes.',
     },
-    tiktokSection: {
-      eyebrow: 'Instants Réels dans le Grand Erg Oriental',
-      title: 'Suivez le Quotidien du Désert sur TikTok (@IbraSahara)',
+    reviewsSection: {
+      eyebrow: 'Témoignages Voyageurs',
+      title: 'Avis des Voyageurs Ayant Exploré avec Ibra',
       subtitle:
-        'Sans artifice : découvrez la cuisson du pain Mella sous le sable brûlant, nos caravanes au coucher du soleil et l’ambiance autour du feu.',
-      followCta: 'Voir la Vie du Désert sur TikTok (@IbraSahara) ↗',
-      reels: [
-        {
-          id: 'reel-1',
-          title: 'Cuisson du Pain de Sable Mella sous la Braise',
-          caption: 'Le rituel incontournable chaque soir au bivouac 🔥🫓 #Douz #Sahara #Tunisie',
-          views: '48.2K',
-          tag: 'Cuisine Nomade',
-          image: '/images/ibra-guide-leading-camels.jpg',
-        },
-        {
-          id: 'reel-2',
-          title: 'Caravane à l’Heure Dorée dans le Grand Erg',
-          caption: 'Départ 3h avant le coucher du soleil quand le sable devient d’or 🐪✨',
-          views: '92.5K',
-          tag: 'Méharée',
-          image: '/images/ibra-caravan-dunes.jpg',
-        },
-        {
-          id: 'reel-3',
-          title: 'Session Quad sur les Crêtes de Douz',
-          caption: 'Des dunes vierges à perte de vue au coucher du soleil 🏜️🏁',
-          views: '64.1K',
-          tag: 'Quad Dunes',
-          image: '/images/quad-dunes-session.jpg',
-        },
-        {
-          id: 'reel-4',
-          title: 'Source Thermale & Palmeraie de Ksar Ghilane',
-          caption: 'Après la traversée des dunes en 4x4, baignade dans la source chaude 🌴🚙',
-          views: '53.8K',
-          tag: 'Expédition 4x4',
-          image: '/images/ksar-ghilane-oasis.jpg',
-        },
-      ],
-      reviewsTitle: 'Avis des Voyageurs Ayant Exploré avec Ibra',
+        'Découvrez les retours des voyageurs partis dans les dunes de Douz et l’oasis de Ksar Ghilane avec Ibra.',
       reviews: [
         {
           name: 'Claire & Matthieu L.',
@@ -609,7 +511,7 @@ export const DICTIONARIES: Record<Language, Dictionary> = {
           flag: '🇩🇪',
           date: 'Novembre',
           tourType: 'Sur-Mesure : Dromadaire + Retour en Quad',
-          text: 'Nous voulions combiner dromadaire le soir et quad le matin. Ibra a fait venir les quads directement après notre nuit au bivouac. Organisation parfaite sur WhatsApp et tarif local très honnête.',
+          text: 'Nous voulions combiner dromadaire le soir et quad le matin. Ibra a fait venir les quads directement après notre nuit au bivouac. Organisation parfaite et fluide sur WhatsApp.',
         },
         {
           name: 'Sarah & James K.',
@@ -637,9 +539,9 @@ export const DICTIONARIES: Record<Language, Dictionary> = {
             'Le Bivouac Traditionnel offre une immersion nomade authentique avec tentes bédouines, matelas sur tapis berbères, feu de camp central et sanitaires partagés. Les formules Grand Confort et Luxe Glamping proposent une tente privée spacieuse avec vrai lit surélevé, literie hôtelière et salle de bain privative avec douche chaude.',
         },
         {
-          question: 'Quels sont les moyens de paiement et les devises acceptés ?',
+          question: 'Comment fonctionnent la réservation et le règlement ?',
           answer:
-            'En réservant directement sur WhatsApp, vous réglez sur place à Douz en espèces en Dinars Tunisiens (TND), en Euros (EUR) ou en Dollars (USD). Si vous préférez payer en ligne par carte bancaire avec garantie acheteur, vous pouvez réserver via nos liens GetYourGuide ou TripAdvisor.',
+            'Il suffit de contacter Ibra sur WhatsApp pour confirmer vos dates et votre programme. Le règlement s’effectue sur place à Douz en espèces en Dinars Tunisiens (TND), en Euros (EUR) ou en Dollars (USD).',
         },
         {
           question: 'Faut-il avoir de l’expérience pour conduire un quad dans les dunes ?',
@@ -655,16 +557,16 @@ export const DICTIONARIES: Record<Language, Dictionary> = {
     },
     footer: {
       description:
-        'Guide saharien indépendant à Douz, Tunisie. Méharées privées à dos de dromadaire, sessions quad et expéditions 4x4 sur mesure dans le Grand Erg Oriental.',
+        'Guide saharien à Douz, Tunisie. Méharées privées à dos de dromadaire, sessions quad et expéditions 4x4 sur mesure dans le Grand Erg Oriental.',
       locationLabel: 'Point de Départ',
       locationValue: 'Douz, Gouvernorat de Kébili, Tunisie (Porte du Sahara)',
-      phoneLabel: 'WhatsApp & Téléphone Direct',
+      phoneLabel: 'WhatsApp & Téléphone',
       quickLinks: 'Navigation',
-      otaBookings: 'Plateformes & Réseaux',
+      contactHeading: 'Contact & Réservation WhatsApp',
       rights: 'Tous droits réservés. Conçu à Douz, Tunisie.',
     },
     mobileBar: {
-      assurance: 'Tarif Local en Direct',
+      assurance: 'Discuter en Direct avec Ibra',
       subAssurance: 'Réponse rapide FR • EN • AR',
       cta: 'WhatsApp Ibra',
     },
@@ -678,9 +580,9 @@ export const DICTIONARIES: Record<Language, Dictionary> = {
     },
     nav: {
       packages: 'الباقات الصحراوية',
-      curator: 'لماذا إبرا؟',
+      curator: 'تعرف على إبرا',
       customTrip: 'صمّم رحلتك الخاصة',
-      tiktok: 'حياة الصحراء',
+      reviews: 'آراء الضيوف',
       faq: 'الأسئلة الشائعة',
       whatsappCta: 'تواصل عبر واتساب',
       currencyLabel: 'العملة',
@@ -690,32 +592,30 @@ export const DICTIONARIES: Record<Language, Dictionary> = {
       pill: '📍 دوز، تونس • دليلك يتحدث 🇹🇳 العربية، 🇫🇷 الفرنسية، 🇬🇧 الإنجليزية',
       h1: 'عش تجربة الصحراء الكبرى الحقيقية مع إبرا—دليلك المحلي في دوز.',
       subheadline:
-        'ابتعد عن رحلات الحافلات الجماعية المقيّدة. اختر إحدى باقاتنا المميزة أو صمّم رحلتك الخاصة 100% على ظهر الجمال أو دراجات الكواد أو سيارات الدفع الرباعي 4x4.',
+        'اكتشف كثبان العرق الشرقي الكبير بالطريقة التي تناسبك. اختر إحدى باقاتنا المميزة أو صمّم رحلتك الخاصة 100% على ظهر الجمال أو دراجات الكواد أو سيارات الدفع الرباعي 4x4.',
       exploreCta: 'استكشف الباقات ↓',
       whatsappCta: 'تحدث عبر واتساب',
-      trustLabel: 'دليل محلي معتمد وحجز مباشر بدون وسطاء',
+      trustBadges: [
+        'تقييم 5.0 ★ من المسافرين',
+        'رحلات خاصة ومصممة حسب الطلب',
+        'استقبال مجاني من الفندق في دوز',
+      ],
       verifiedGuide: 'ابن صحراء دوز الأصيل',
       customOrSignature: 'رحلات خاصة ومرنة بالكامل',
     },
     curator: {
-      eyebrow: 'ميزة الدليل المحلي المستقل',
-      title: 'حرية كاملة في الاختيار.. رحلتك مفصّلة على مقاس أحلامك.',
+      eyebrow: 'دليلك الشخصي في صحراء دوز',
+      title: 'كل رحلة صحراوية مصمّمة خصيصاً لك.',
       subtitle:
-        'لأن إبرا لا يقيّدك بمخيم واحد مزدحم أو أسطول تجاري واحد، فإنه يختار لك بعناية أفضل الإبل وأحدث دراجات الكواد وسيارات الدفع الرباعي، ويحجز لك نوع المخيم الذي يناسب ذوقك وميزانيتك تماماً.',
+        'نشأ إبرا على مشارف كثبان دوز، وهو يرتّب كل رحلة بما يناسب تطلعاتك؛ من اختيار أفضل الإبل الهادئة وأحدث دراجات الكواد وسيارات الدفع الرباعي، إلى تنسيق نمط التخييم الذي تفضّله بين مخيم البدو الأصيل تحت النجوم أو المخيم الفاخر المزوّد بحمام خاص.',
       quote:
         '«في الصحراء، الكرم وحسن الضيافة أمانة. أخبرني كيف تحلم برؤية الكثبان—سهرة بدوية حول النار تحت النجوم أو خيمة فاخرة بحمام خاص—وسأتولى ترتيب كل تفصيل بنفسي.» — إبرا',
-      comparisonTitle: 'وكالات السياحة التقليدية مقابل الحجز المباشر مع إبرا',
-      agencyTitle: 'الوكالات السياحية التقليدية',
-      agencyPoints: [
-        'إجبار المسافرين على مخيم واحد مزدحم تملكه الوكالة',
-        'مواعيد صارمة ومجموعات كبيرة تفقدك هدوء الصحراء',
-        'عمولات وسطاء إضافية تتراوح بين 30% و50%',
-      ],
-      ibraTitle: 'دليلك المحلي المستقل (إبرا صحارى)',
-      ibraPoints: [
-        'اختيار أفضل الجمال وأحدث دراجات الكواد وأمهر سائقي الصحراء',
-        'حرية الاختيار بين مخيم البدو الأصيل أو المخيم الفاخر (غلامبينغ)',
-        'أسعار محلية مباشرة بالدينار التونسي أو اليورو أو الدولار عبر واتساب',
+      highlightsTitle: 'ما الذي يميّز رحلتك مع إبرا',
+      highlightsPoints: [
+        'إبل هادئة ومختارة بعناية، ودراجات كواد أوتوماتيكية حديثة، وسائقو صحراء محترفون',
+        'حرية الاختيار بين مخيم البدو التقليدي (بيفواك) أو المخيم الفاخر (غلامبينغ)',
+        'تخطيط شخصي وتنسيق مباشر وسريع عبر واتساب',
+        'ضيافة صحراوية أصيلة تشمل تحضير خبز الملا الطازج تحت الجمر',
       ],
       pillars: [
         {
@@ -742,19 +642,16 @@ export const DICTIONARIES: Record<Language, Dictionary> = {
     },
     packagesSection: {
       eyebrow: 'الرحلات الصحراوية المميزة',
-      title: 'مسارات صحراوية أصيلة بأسعار محلية شفافة',
+      title: 'رحلاتنا الصحراوية المميزة من دوز',
       subtitle:
-        'اختر فئة المخيم أو مدة الجولة أدناه، ويمكنك تغيير العملة من الشريط العلوي لعرض الأسعار فوراً بالدينار التونسي أو اليورو أو الدولار.',
+        'اختر فئة المخيم أو مدة الجولة أدناه، ويمكنك تغيير العملة من الشريط العلوي لعرض الأسعار بالدينار التونسي أو اليورو أو الدولار.',
       selectTierLabel: 'اختر الفئة أو البرنامج:',
       startingFrom: 'ابتداءً من',
       perPerson: '/ للشخص',
       itineraryToggleOpen: 'عرض البرنامج التفصيلي وما تشمله الرحلة',
       itineraryToggleClose: 'إخفاء تفاصيل البرنامج',
       includedTitle: 'تشمل الرحلة:',
-      bookWhatsappCta: 'احجز مباشرة عبر واتساب',
-      otaGuaranteeLabel: 'تفضّل الدفع الإلكتروني عبر المنصات العالمية؟',
-      bookGyg: 'احجز عبر GetYourGuide',
-      bookTripAdvisor: 'شاهد على TripAdvisor',
+      bookWhatsappCta: 'احجز عبر واتساب',
     },
     customBuilder: {
       eyebrow: 'مصمّم الرحلات الخاصة',
@@ -819,47 +716,11 @@ export const DICTIONARIES: Record<Language, Dictionary> = {
       sendWhatsappCta: 'أرسل طلب الرحلة الخاصة إلى إبرا عبر واتساب ←',
       responseGuarantee: 'رد مباشر من إبرا — غالباً خلال 15 إلى 30 دقيقة.',
     },
-    tiktokSection: {
-      eyebrow: 'لقطات حقيقية من العرق الشرقي الكبير',
-      title: 'تابع يوميات الصحراء على تيك توك (@IbraSahara)',
+    reviewsSection: {
+      eyebrow: 'آراء وتجارب الضيوف',
+      title: 'تجارب المسافرين مع إبرا صحارى',
       subtitle:
-        'شاهد الأجواء الحقيقية في صحراء دوز: تحضير خبز الملا تحت الرمل والجمر، قوافل الإبل عند الغروب، وسهرات السمر البدوية.',
-      followCta: 'شاهد يوميات الصحراء على تيك توك (@IbraSahara) ↗',
-      reels: [
-        {
-          id: 'reel-1',
-          title: 'تحضير خبز الملا تحت الرمل والجمر',
-          caption: 'طقسنا الصحراوي الأصيل كل ليلة في المخيم 🔥🫓 #دوز #الصحراء_الكبرى #تونس',
-          views: '48.2K',
-          tag: 'خبز الرمل',
-          image: '/images/ibra-guide-leading-camels.jpg',
-        },
-        {
-          id: 'reel-2',
-          title: 'قافلة الغروب نحو أعماق الكثبان',
-          caption: 'الانطلاق قبل الغروب بـ 3 ساعات حين تتحول الكثبان إلى ذهب خالص 🐪✨',
-          views: '92.5K',
-          tag: 'قافلة الجمال',
-          image: '/images/ibra-caravan-dunes.jpg',
-        },
-        {
-          id: 'reel-3',
-          title: 'جولة الكواد فوق قمم كثبان دوز',
-          caption: 'كثبان رملية بكر تمتد بلا نهاية عند ساعة الغروب 🏜️🏁',
-          views: '64.1K',
-          tag: 'مغامرة كواد',
-          image: '/images/quad-dunes-session.jpg',
-        },
-        {
-          id: 'reel-4',
-          title: 'العين الساخنة ونخيل واحة قصر غيلان',
-          caption: 'بعد عبور الكثبان بسيارة 4x4، استرخاء في المياه المعدنية الدافئة 🌴🚙',
-          views: '53.8K',
-          tag: 'واحة قصر غيلان',
-          image: '/images/ksar-ghilane-oasis.jpg',
-        },
-      ],
-      reviewsTitle: 'تجارب المسافرين مع إبرا صحارى',
+        'انطباعات المسافرين الذين خاضوا تجربة الكثبان الرملية في دوز وواحة قصر غيلان مع إبرا.',
       reviews: [
         {
           name: 'كلير وماتيو',
@@ -875,7 +736,7 @@ export const DICTIONARIES: Record<Language, Dictionary> = {
           flag: '🇩🇪',
           date: 'نوفمبر',
           tourType: 'برنامج مخصّص: جمال عند الغروب + كواد صباحاً',
-          text: 'أردنا تجربة الجمال والكواد معاً، فرتّب إبرا وصول دراجات الكواد إلينا صباحاً بعد ليلتنا في المخيم. تنسيق ممتاز عبر واتساب وسعر محلي عادل جداً.',
+          text: 'أردنا تجربة الجمال والكواد معاً، فرتّب إبرا وصول دراجات الكواد إلينا صباحاً بعد ليلتنا في المخيم. تنسيق ممتاز وسلس عبر واتساب.',
         },
         {
           name: 'سارة وجيمس',
@@ -903,9 +764,9 @@ export const DICTIONARIES: Record<Language, Dictionary> = {
             'مخيم البدو التقليدي يمنحك التجربة الصحراوية الأصيلة بخيام بدوية وفرش مريح وسهرة حول النار مع مرافق مشتركة. أما الفئة المريحة والفاخرة (غلامبينغ) فتوفر خيمة خاصة واسعة بسرير مرتفع ومفروشات فندقية وحمام خاص مستقل بمياه ساخنة.',
         },
         {
-          question: 'ما هي طرق الدفع والعملات المقبولة؟',
+          question: 'كيف يتم الحجز والدفع؟',
           answer:
-            'عند الحجز المباشر عبر واتساب، يكون الدفع نقداً عند الوصول إلى دوز بالدينار التونسي (TND) أو اليورو (EUR) أو الدولار الأمريكي (USD). وإذا كنت تفضّل الدفع بالبطاقة البنكية عبر الإنترنت، يمكنك الحجز عبر روابطنا في GetYourGuide أو TripAdvisor.',
+            'يمكنك التواصل مباشرة مع إبرا عبر واتساب لتأكيد الموعد وتفاصيل البرنامج، ويكون الدفع نقداً عند الوصول إلى دوز بالدينار التونسي (TND) أو اليورو (EUR) أو الدولار الأمريكي (USD).',
         },
         {
           question: 'هل أحتاج إلى خبرة سابقة لقيادة دراجات الكواد في الكثبان؟',
@@ -921,17 +782,17 @@ export const DICTIONARIES: Record<Language, Dictionary> = {
     },
     footer: {
       description:
-        'دليلك المحلي المستقل في صحراء دوز، تونس. رحلات جمال خاصة، جولات دراجات كواد، ومغامرات دفع رباعي 4x4 مخصصة في العرق الشرقي الكبير.',
+        'دليلك الصحراوي في دوز، تونس. رحلات جمال خاصة، جولات دراجات كواد، ومغامرات دفع رباعي 4x4 مخصصة في العرق الشرقي الكبير.',
       locationLabel: 'نقطة الانطلاق',
       locationValue: 'دوز، ولاية قبلي، تونس (بوابة الصحراء الكبرى)',
-      phoneLabel: 'واتساب وهاتف مباشر',
+      phoneLabel: 'واتساب وهاتف',
       quickLinks: 'روابط سريعة',
-      otaBookings: 'منصات الحجز والتواصل',
+      contactHeading: 'التواصل والحجز المباشر',
       rights: 'جميع الحقوق محفوظة. صُمم في دوز، تونس.',
     },
     mobileBar: {
-      assurance: 'حجز مباشر بسعر محلي',
-      subAssurance: 'رد فوري بالعربية • FR • EN',
+      assurance: 'تواصل مباشرة مع إبرا',
+      subAssurance: 'رد سريع بالعربية • FR • EN',
       cta: 'واتساب إبرا',
     },
   },
@@ -940,4 +801,3 @@ export const DICTIONARIES: Record<Language, Dictionary> = {
 export function getDictionary(lang: Language): Dictionary {
   return DICTIONARIES[lang] || DICTIONARIES.EN;
 }
-

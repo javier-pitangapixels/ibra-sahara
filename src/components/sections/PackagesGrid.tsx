@@ -9,7 +9,6 @@ import {
   ChevronLeft,
   ChevronRight,
   MessageCircle,
-  ExternalLink,
   Check,
   Calendar,
 } from 'lucide-react';
@@ -269,8 +268,8 @@ function PackageCard({
           </div>
         </div>
 
-        {/* Dual Action Buttons: Primary WhatsApp + Outbound OTA Links */}
-        <div className="space-y-3 pt-2 border-t border-[#14181D]/10">
+        {/* Primary WhatsApp Booking Button */}
+        <div className="pt-2 border-t border-[#14181D]/10">
           <a
             href={whatsappBookingUrl}
             target="_blank"
@@ -280,32 +279,6 @@ function PackageCard({
             <MessageCircle className="w-4 h-4 shrink-0" />
             <span>{dict.packagesSection.bookWhatsappCta}</span>
           </a>
-
-          <div className="space-y-1.5">
-            <p className="text-[11px] text-center text-[#4A4F55]">
-              {dict.packagesSection.otaGuaranteeLabel}
-            </p>
-            <div className="grid grid-cols-2 gap-2">
-              <a
-                href={pkg.otaLinks.getYourGuideUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#EAE2D3] hover:bg-[#ded3be] text-[#14181D] text-xs font-semibold px-3 py-2 transition-colors"
-              >
-                <span>{dict.packagesSection.bookGyg}</span>
-                <ExternalLink className="w-3 h-3 opacity-70 shrink-0" />
-              </a>
-              <a
-                href={pkg.otaLinks.tripAdvisorUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#EAE2D3] hover:bg-[#ded3be] text-[#14181D] text-xs font-semibold px-3 py-2 transition-colors"
-              >
-                <span>{dict.packagesSection.bookTripAdvisor}</span>
-                <ExternalLink className="w-3 h-3 opacity-70 shrink-0" />
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </article>

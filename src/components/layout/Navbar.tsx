@@ -91,10 +91,10 @@ export function Navbar({ lang, dict }: NavbarProps) {
             {dict.nav.customTrip}
           </a>
           <a
-            href="#tiktok"
+            href="#reviews"
             className="hover:text-[#C85A32] transition-colors"
           >
-            {dict.nav.tiktok}
+            {dict.nav.reviews}
           </a>
           <a
             href="#faq"

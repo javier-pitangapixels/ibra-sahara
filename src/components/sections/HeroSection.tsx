@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageCircle, ArrowDown, Star, CheckCircle2, ExternalLink } from 'lucide-react';
+import { MessageCircle, ArrowDown, CheckCircle2 } from 'lucide-react';
 import { Language } from '@/data/packages';
 import { Dictionary } from '@/lib/dictionaries';
 import { buildWhatsAppUrl } from '@/lib/whatsapp';
@@ -84,54 +84,21 @@ export function HeroSection({ lang, dict }: HeroSectionProps) {
           </a>
         </div>
 
-        {/* Platform Trust Bar: Verified Badges linking to TripAdvisor, GetYourGuide, and TikTok */}
+        {/* Clean Hospitality Highlights Bar */}
         <div className="pt-8 border-t border-[#F4EFE6]/15 max-w-3xl mx-auto">
-          <p className="text-xs uppercase tracking-widest text-[#9BA3AE] mb-4 font-semibold">
-            {dict.hero.trustLabel}
-          </p>
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5">
-            <a
-              href="https://www.tripadvisor.com/Attractions-g477973-Activities-Douz_Kebili_Governorate.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-[#F4EFE6]/10 hover:bg-[#F4EFE6]/18 border border-[#F4EFE6]/15 px-4 py-2 text-xs sm:text-sm font-medium text-[#F4EFE6] transition-colors"
-            >
-              <span className="flex items-center text-[#D4AF37]">
-                <Star className="w-3.5 h-3.5 fill-current" />
-                <Star className="w-3.5 h-3.5 fill-current" />
-                <Star className="w-3.5 h-3.5 fill-current" />
-                <Star className="w-3.5 h-3.5 fill-current" />
-                <Star className="w-3.5 h-3.5 fill-current" />
+            {dict.hero.trustBadges.map((badge, idx) => (
+              <span
+                key={idx}
+                className="inline-flex items-center gap-2 rounded-full bg-[#F4EFE6]/10 border border-[#F4EFE6]/15 px-4 py-2 text-xs sm:text-sm font-medium text-[#F4EFE6]"
+              >
+                <span className="w-2 h-2 rounded-full bg-[#D4AF37]" />
+                <span>{badge}</span>
               </span>
-              <span>TripAdvisor Verified</span>
-              <ExternalLink className="w-3 h-3 opacity-70" />
-            </a>
-
-            <a
-              href="https://www.getyourguide.com/douz-l148204/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-[#F4EFE6]/10 hover:bg-[#F4EFE6]/18 border border-[#F4EFE6]/15 px-4 py-2 text-xs sm:text-sm font-medium text-[#F4EFE6] transition-colors"
-            >
-              <span className="w-2 h-2 rounded-full bg-[#C85A32]" />
-              <span>GetYourGuide Partner</span>
-              <ExternalLink className="w-3 h-3 opacity-70" />
-            </a>
-
-            <a
-              href="https://www.tiktok.com/@IbraSahara"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-[#F4EFE6]/10 hover:bg-[#F4EFE6]/18 border border-[#F4EFE6]/15 px-4 py-2 text-xs sm:text-sm font-medium text-[#F4EFE6] transition-colors"
-            >
-              <span className="w-2 h-2 rounded-full bg-[#1E7E48]" />
-              <span>TikTok @IbraSahara</span>
-              <ExternalLink className="w-3 h-3 opacity-70" />
-            </a>
+            ))}
           </div>
         </div>
       </div>
     </section>
   );
 }
-
