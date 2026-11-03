@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <g>
+    <!-- Outer Desert Arch & Compass Frame (Expanded Filled Path) -->
+    <path fill="#C85A32" fill-rule="evenodd" d="M32 3 L52.5 11.5 L61 32 L52.5 52.5 L32 61 L11.5 52.5 L3 32 L11.5 11.5 Z M32 6.6 L14.1 14.1 L6.6 32 L14.1 49.9 L32 57.4 L49.9 49.9 L57.4 32 L49.9 14.1 Z"/>
+    <!-- Cardinal Amazigh Tick Marks -->
+    <path fill="#C85A32" d="M31 6.2 H33 V10.2 H31 Z M31 53.8 H33 V57.8 H31 Z M6.2 31 H10.2 V33 H6.2 Z M53.8 31 H57.8 V33 H53.8 Z"/>
+    <!-- Polaris North Star (8-Pointed Saharan Star) -->
+    <path fill="#C85A32" d="M32 10.5 L33.7 15.8 L39 17.5 L33.7 19.2 L32 24.5 L30.3 19.2 L25 17.5 L30.3 15.8 Z"/>
+    <path fill="#F4EFE6" d="M32 13.8 L35.2 17.5 L32 21.2 L28.8 17.5 Z"/>
+    <!-- Stylized Amazigh / Bedouin Compass Needle -->
+    <path fill="#F4EFE6" fill-rule="evenodd" d="M32 23.5 L38.5 32.5 L32 41.5 L25.5 32.5 Z M32 27.3 L28.4 32.5 L32 37.7 L35.6 32.5 Z"/>
+    <path fill="#C85A32" d="M32 30.2 L33.8 32.5 L32 34.8 L30.2 32.5 Z"/>
+    <!-- Sweeping Sahara Dune Ridge (Primary Crest) -->
+    <path fill="#C85A32" d="M10.5 44.5 C16.5 39.2 23.8 37.8 32 41.8 C40.2 45.8 47.2 43.2 53.5 37.5 L51.8 47.2 C45.8 50.2 38.8 50.8 32 46.8 C25.2 42.8 18.2 43.8 12.2 47.5 Z"/>
+    <!-- Secondary Foreground Dune Contour -->
+    <path fill="#F4EFE6" d="M15.5 50.2 C22.5 46.8 28.5 47.5 35.5 50.8 C41.5 53.5 46.5 52.2 50.2 49.4 L48.2 52.2 L32 58.8 L15.8 52.2 Z"/>
+  </g>
+</svg>

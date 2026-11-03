@@ -1,26 +1,58 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Color System from Brand Identity System Specification */
+  --bg-primary: #F4EFE6;         /* Warm Sahara Sand - Primary Canvas */
+  --bg-surface: #FFFFFF;         /* Pure White - Cards, Menus, Modals */
+  --bg-elevated: #EAE2D3;        /* Travertine Sand - Filter Pills, Badges */
+  --bg-obsidian: #14181D;        /* Saharan Night - Hero Overlay, Dark Sections, Footer */
+  
+  --text-primary: #14181D;       /* Obsidian - High Contrast on Sand (WCAG AAA) */
+  --text-secondary: #4A4F55;     /* Desert Slate - Body text, logistics metadata */
+  --text-on-dark: #F4EFE6;       /* Warm Sand - Text on dark backgrounds */
+  --text-muted-dark: #9BA3AE;    /* Starlight Gray - Subtitles on dark backgrounds */
+
+  --accent-terracotta: #C85A32;  /* Sunset Terracotta - Primary CTAs and Highlights */
+  --accent-terracotta-hover: #A94622;
+  --accent-whatsapp: #1E7E48;    /* Oasis Emerald - WhatsApp CTAs & Booking Triggers */
+  --accent-whatsapp-hover: #156236;
+  --accent-gold: #D4AF37;        /* Tuareg Brass - 5-Star Reviews & Trust Badges */
+
+  --border-subtle: rgba(20, 24, 29, 0.12);
+  --border-dark: rgba(244, 239, 230, 0.15);
+
+  /* Typography Stack */
+  --font-display: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-jakarta), system-ui, sans-serif;
+  --font-arabic: var(--font-cairo), sans-serif;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-jakarta), system-ui, sans-serif;
+  --font-arabic: var(--font-cairo), sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+[dir="rtl"] body,
+.font-arabic {
+  font-family: var(--font-arabic);
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3 {
+  font-family: var(--font-arabic);
 }

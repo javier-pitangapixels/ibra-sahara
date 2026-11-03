@@ -1,0 +1,27 @@
+:root {
+  /* Color System */
+  --bg-primary: #F4EFE6;         /* Warm Sahara Sand - Primary Canvas */
+  --bg-surface: #FFFFFF;         /* Pure White - Cards, Menus, Modals */
+  --bg-elevated: #EAE2D3;        /* Travertine Sand - Filter Pills, Badges */
+  --bg-obsidian: #14181D;        /* Saharan Night - Hero Overlay, Dark Sections, Footer */
+  
+  --text-primary: #14181D;       /* Obsidian - High Contrast on Sand (WCAG AAA) */
+  --text-secondary: #4A4F55;     /* Desert Slate - Body text, logistics metadata */
+  --text-on-dark: #F4EFE6;       /* Warm Sand - Text on dark backgrounds */
+  --text-muted-dark: #9BA3AE;    /* Starlight Gray - Subtitles on dark backgrounds */
+
+  --accent-terracotta: #C85A32;  /* Sunset Terracotta - Primary CTAs and Highlights */
+  --accent-terracotta-hover: #A94622;
+  --accent-whatsapp: #1E7E48;    /* Oasis Emerald - WhatsApp CTAs & Booking Triggers */
+  --accent-whatsapp-hover: #156236;
+  --accent-gold: #D4AF37;        /* Tuareg Brass - 5-Star Reviews & Trust Badges */
+
+  --border-subtle: rgba(20, 24, 29, 0.12);
+  --border-dark: rgba(244, 239, 230, 0.15);
+
+  /* Typography Stack */
+  --font-display: 'Playfair Display', Georgia, serif;          /* Latin Headings */
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;    /* Latin UI & Body */
+  --font-arabic: 'Cairo', 'Noto Kufi Arabic', sans-serif;      /* Arabic Headings & Body */
+}
+
