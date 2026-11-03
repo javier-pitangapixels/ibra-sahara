@@ -38,3 +38,4 @@ export function buildWhatsAppUrl(params: {
 
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
+

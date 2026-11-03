@@ -19,3 +19,4 @@ export default async function LocalizedPage({
 
   return <LandingPageView lang={lang} />;
 }
+

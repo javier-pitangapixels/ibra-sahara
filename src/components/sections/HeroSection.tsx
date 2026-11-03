@@ -134,3 +134,4 @@ export function HeroSection({ lang, dict }: HeroSectionProps) {
     </section>
   );
 }
+

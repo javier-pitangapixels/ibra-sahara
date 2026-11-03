@@ -64,3 +64,4 @@ export function FaqAccordion({ dict }: FaqAccordionProps) {
     </section>
   );
 }
+

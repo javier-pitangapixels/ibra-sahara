@@ -44,3 +44,4 @@ export function MobileBottomBar({ lang, dict }: MobileBottomBarProps) {
     </div>
   );
 }
+

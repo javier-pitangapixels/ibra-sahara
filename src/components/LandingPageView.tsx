@@ -47,3 +47,4 @@ export function LandingPageView({ lang }: { lang: Language }) {
     </CurrencyProvider>
   );
 }
+

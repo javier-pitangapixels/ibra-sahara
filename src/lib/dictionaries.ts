@@ -940,3 +940,4 @@ export const DICTIONARIES: Record<Language, Dictionary> = {
 export function getDictionary(lang: Language): Dictionary {
   return DICTIONARIES[lang] || DICTIONARIES.EN;
 }
+
